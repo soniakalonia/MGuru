@@ -3,13 +3,13 @@ import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Services from '@/pages/Services';
-import Courses from '@/pages/Courses';
 import Contact from '@/pages/Contact';
 import Careers from '@/pages/Careers';
 import FAQ from '@/pages/FAQ';
 import Testimonials from '@/pages/Testimonials';
 import Portfolio from '@/pages/Portfolio';
-import Pricing from '@/pages/Pricing';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsOfService from '@/pages/TermsOfService';
 
 export default function App() {
   return (
@@ -19,13 +19,13 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>

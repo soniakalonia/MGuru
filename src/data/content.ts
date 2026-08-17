@@ -4,9 +4,7 @@ export const navLinks: NavLink[] = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Services', to: '/services' },
-  { label: 'Courses', to: '/courses' },
   { label: 'Portfolio', to: '/portfolio' },
-  { label: 'Pricing', to: '/pricing' },
   { label: 'Careers', to: '/careers' },
   { label: 'FAQ', to: '/faq' },
 ];
@@ -22,186 +20,74 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    id: 'consulting',
-    title: 'PM Consulting',
-    short: 'Expert guidance to deliver complex projects on time and on budget.',
+    id: 'seo',
+    title: 'Search Engine Optimization (SEO)',
+    short: 'Boost your online visibility and drive organic traffic.',
     description:
-      'Our seasoned consultants embed with your teams to establish governance, rescue at-risk projects, and build delivery capability that lasts beyond our engagement.',
+      'Comprehensive SEO strategies to improve your search engine rankings, increase organic traffic, and grow your online presence with data-driven optimization techniques.',
     icon: 'Compass',
-    features: ['Project health checks', 'PMO setup & governance', 'Delivery rescue & recovery', 'Risk & issue management'],
+    features: ['Keyword research & analysis', 'On-page optimization', 'Technical SEO audits', 'Link building & authority'],
   },
   {
-    id: 'training',
-    title: 'Corporate Training',
-    short: 'Tailored workshops that upskill teams in modern project delivery.',
+    id: 'social-media',
+    title: 'Social Media Marketing',
+    short: 'Engage your audience and build brand presence.',
     description:
-      'From foundational project management to advanced agile leadership, our corporate programs are customized to your industry and delivered on-site or online.',
-    icon: 'GraduationCap',
-    features: ['PMP & CAPM prep', 'Agile / Scrum coaching', 'Leadership for PMs', 'Custom curriculum design'],
-  },
-  {
-    id: 'certification',
-    title: 'Certification Prep',
-    short: 'Structured prep paths with high pass rates for global credentials.',
-    description:
-      'Achieve globally recognized certifications with our structured preparation paths, mock exams, and mentor support designed around the latest exam blueprints.',
-    icon: 'Award',
-    features: ['PMP, PMI-ACP, PRINCE2', 'Mock exams & analytics', 'Mentor-led study groups', 'Application assistance'],
-  },
-  {
-    id: 'pmostartup',
-    title: 'PMO Setup',
-    short: 'Stand up a high-performing PMO tailored to your organization.',
-    description:
-      'We design and launch Project Management Offices that fit your culture — defining templates, metrics, reporting cadence, and the operating model that drives consistency.',
-    icon: 'Building2',
-    features: ['Operating model design', 'Methodology & templates', 'Portfolio dashboards', 'Maturity roadmap'],
-  },
-  {
-    id: 'agile',
-    title: 'Agile Transformation',
-    short: 'Shift from plan-driven to adaptive delivery with confidence.',
-    description:
-      'We guide organizations through agile transformations — from framework selection and coaching to enterprise scaling — with pragmatic, outcome-focused approaches.',
-    icon: 'Repeat',
-    features: ['Scrum / Kanban adoption', 'SAFe & scaling coaching', 'Agile maturity assessment', 'Team enablement'],
-  },
-  {
-    id: 'coaching',
-    title: 'Executive Coaching',
-    short: 'One-on-one coaching for sponsors and senior project leaders.',
-    description:
-      'Strategic, confidential coaching for project sponsors and PM leaders — helping you navigate stakeholder politics, prioritization, and delivery trade-offs with clarity.',
-    icon: 'Target',
-    features: ['Sponsor coaching', 'Portfolio prioritization', 'Stakeholder alignment', 'Change leadership'],
-  },
-];
-
-export type Course = {
-  id: string;
-  title: string;
-  category: 'Certification' | 'Agile' | 'Leadership' | 'Fundamentals';
-  level: 'Beginner' | 'Intermediate' | 'Advanced';
-  duration: string;
-  hours: number;
-  price: number;
-  rating: number;
-  students: number;
-  blurb: string;
-  icon: string;
-};
-
-export const courses: Course[] = [
-  {
-    id: 'pmp',
-    title: 'PMP Certification Bootcamp',
-    category: 'Certification',
-    level: 'Advanced',
-    duration: '12 weeks',
-    hours: 42,
-    price: 1299,
-    rating: 4.9,
-    students: 8420,
-    blurb: 'Comprehensive PMP prep aligned to the latest PMBOK Guide, with mock exams and mentor support.',
-    icon: 'Award',
-  },
-  {
-    id: 'capm',
-    title: 'CAPM Foundation',
-    category: 'Certification',
-    level: 'Beginner',
-    duration: '8 weeks',
-    hours: 28,
-    price: 699,
-    rating: 4.8,
-    students: 3210,
-    blurb: 'Start your PM career with the Certified Associate in Project Management — perfect for newcomers.',
-    icon: 'BookOpen',
-  },
-  {
-    id: 'agile-csm',
-    title: 'Certified ScrumMaster (CSM)',
-    category: 'Agile',
-    level: 'Intermediate',
-    duration: '2 weeks',
-    hours: 16,
-    price: 599,
-    rating: 4.9,
-    students: 5180,
-    blurb: 'Become a licensed ScrumMaster with hands-on simulations and real-world sprint practice.',
-    icon: 'Repeat',
-  },
-  {
-    id: 'pmi-acp',
-    title: 'PMI-ACP Agile Practitioner',
-    category: 'Agile',
-    level: 'Advanced',
-    duration: '10 weeks',
-    hours: 36,
-    price: 1099,
-    rating: 4.7,
-    students: 2140,
-    blurb: 'Master agile across frameworks — Scrum, Kanban, XP, and Lean — and earn the PMI-ACP credential.',
-    icon: 'Zap',
-  },
-  {
-    id: 'prince2',
-    title: 'PRINCE2 Practitioner',
-    category: 'Certification',
-    level: 'Intermediate',
-    duration: '6 weeks',
-    hours: 24,
-    price: 899,
-    rating: 4.6,
-    students: 1890,
-    blurb: 'Structured, process-driven project management based on the globally recognized PRINCE2 method.',
-    icon: 'ClipboardCheck',
-  },
-  {
-    id: 'leadership',
-    title: 'Project Leadership Mastery',
-    category: 'Leadership',
-    level: 'Advanced',
-    duration: '8 weeks',
-    hours: 30,
-    price: 1199,
-    rating: 4.9,
-    students: 1560,
-    blurb: 'Move from managing tasks to leading people, influencing stakeholders, and driving outcomes.',
+      'Strategic social media campaigns across all major platforms to build brand awareness, engage your audience, and drive meaningful conversions.',
     icon: 'Users',
+    features: ['Platform strategy & management', 'Content creation & curation', 'Community engagement', 'Paid social advertising'],
   },
   {
-    id: 'fundamentals',
-    title: 'Project Management Fundamentals',
-    category: 'Fundamentals',
-    level: 'Beginner',
-    duration: '4 weeks',
-    hours: 16,
-    price: 349,
-    rating: 4.7,
-    students: 6730,
-    blurb: 'A practical introduction to planning, scheduling, risk, and communication for new PMs.',
-    icon: 'Compass',
+    id: 'content-marketing',
+    title: 'Content Marketing',
+    short: 'Tell your story and attract your ideal customers.',
+    description:
+      'Create compelling content that educates, entertains, and converts. From blog posts to white papers, we help you build authority and trust.',
+    icon: 'BookOpen',
+    features: ['Content strategy & planning', 'Blog writing & articles', 'White papers & case studies', 'Video & multimedia content'],
   },
   {
-    id: 'risk',
-    title: 'Advanced Risk Management',
-    category: 'Leadership',
-    level: 'Advanced',
-    duration: '5 weeks',
-    hours: 20,
-    price: 799,
-    rating: 4.8,
-    students: 980,
-    blurb: 'Identify, quantify, and respond to project risks with quantitative and qualitative techniques.',
+    id: 'email-marketing',
+    title: 'Email Marketing',
+    short: 'Nurture your leads and build lasting relationships.',
+    description:
+      'Design and execute email campaigns that engage subscribers, nurture leads, and drive conversions with personalized, targeted messaging.',
+    icon: 'ClipboardCheck',
+    features: ['Campaign strategy & design', 'Email automation workflows', 'Segmentation & personalization', 'A/B testing & optimization'],
+  },
+  {
+    id: 'ppc',
+    title: 'Advertising (PPC)',
+    short: 'Drive targeted traffic and immediate results.',
+    description:
+      'Data-driven PPC campaigns across Google Ads, social media, and display networks to reach your target audience and maximize ROI.',
+    icon: 'Target',
+    features: ['Google Ads management', 'Social media advertising', 'Display & retargeting', 'Conversion optimization'],
+  },
+  {
+    id: 'analytics',
+    title: 'Analytics',
+    short: 'Make data-driven decisions with confidence.',
+    description:
+      'Comprehensive analytics solutions that track, measure, and report on your marketing performance. Get actionable insights to optimize every campaign.',
     icon: 'ShieldCheck',
+    features: ['Performance tracking & reporting', 'Conversion analysis', 'ROI measurement', 'Data visualization dashboards'],
+  },
+  {
+    id: 'campaign-planning',
+    title: 'Campaign Planning',
+    short: 'Strategic campaigns that deliver results.',
+    description:
+      'End-to-end campaign planning and execution services that align with your business goals, target the right audience, and deliver measurable results.',
+    icon: 'Zap',
+    features: ['Campaign strategy & ideation', 'Budget planning & allocation', 'Channel selection & planning', 'Performance optimization'],
   },
 ];
 
 export type BlogPost = {
   id: string;
   title: string;
-  category: 'Methodology' | 'Leadership' | 'Agile' | 'Career' | 'Tools';
+  category: 'SEO' | 'Social Media' | 'Content' | 'Analytics' | 'PPC';
   date: string;
   readTime: string;
   author: string;
@@ -210,9 +96,7 @@ export type BlogPost = {
   body: string[];
 };
 
-export const blogPosts: BlogPost[] = [
-
-];
+export const blogPosts: BlogPost[] = [];
 
 export type Testimonial = {
   id: string;
@@ -229,58 +113,58 @@ export const testimonials: Testimonial[] = [
   {
     id: 't1',
     name: 'Priya Sharma',
-    role: 'VP Delivery',
+    role: 'Marketing Director',
     company: 'Nexora Technologies',
     rating: 5,
-    quote: 'MGuru transformed our PMO from a reporting function into a true delivery partner. Their consultants embedded with our teams and left us stronger than they found us.',
+    quote: 'MGuru transformed our digital presence. Their SEO strategy drove 280% more organic traffic in just 6 months. We couldn\'t be happier with the results.',
     avatar: 'PS',
-    project: 'Enterprise PMO Transformation',
+    project: 'SEO Growth Strategy',
   },
   {
     id: 't2',
     name: 'David Chen',
-    role: 'Head of Transformation',
+    role: 'Head of Growth',
     company: 'Meridian Financial',
     rating: 5,
-    quote: 'The agile transformation was pragmatic, not dogmatic. We shipped value sooner and our teams actually enjoyed the change instead of resisting it.',
+    quote: 'The social media campaigns from MGuru were game-changing. We grew our following by 450K+ and saw a significant increase in engagement and leads.',
     avatar: 'DC',
-    project: 'Agile Transformation',
+    project: 'Social Media Brand Building',
   },
   {
     id: 't3',
     name: 'Aisha Khan',
-    role: 'Director of Projects',
+    role: 'Content Lead',
     company: 'Vertex Health',
     rating: 5,
-    quote: 'I passed my PMP on the first attempt thanks to their bootcamp. The mock exams were harder than the real thing, which made all the difference.',
+    quote: 'Their content marketing engine is incredible. They helped us build a content strategy that attracts 180K monthly readers and establishes us as industry leaders.',
     avatar: 'AK',
   },
   {
     id: 't4',
     name: 'Marco Rossi',
-    role: 'COO',
+    role: 'E-commerce Director',
     company: 'Lumen Manufacturing',
     rating: 5,
-    quote: 'They rescued a flagship project that was nine months behind. Within ten weeks we had a recovery plan, renewed governance, and a path to delivery.',
+    quote: 'Our PPC campaigns with MGuru achieved a 4.8x ROAS. They optimized every aspect of our ad spend and delivered outstanding results.',
     avatar: 'MR',
-    project: 'Delivery Recovery',
+    project: 'PPC Campaign Optimization',
   },
   {
     id: 't5',
     name: 'Lena Fischer',
-    role: 'Program Lead',
+    role: 'VP of Analytics',
     company: 'Orbit Telecom',
     rating: 5,
-    quote: 'The executive coaching was a game-changer for our sponsor group. We finally have a shared language for prioritization and trade-offs.',
+    quote: 'The analytics dashboard MGuru built for us is a game-changer. We can now track every marketing channel in real-time and make data-driven decisions.',
     avatar: 'LF',
   },
   {
     id: 't6',
     name: 'Raj Patel',
-    role: 'Engineering Manager',
+    role: 'Marketing Manager',
     company: 'Cloudpeak SaaS',
     rating: 5,
-    quote: 'Our ScrumMaster training was hands-on and immediately applicable. The simulations made the theory stick in a way lectures never do.',
+    quote: 'Their email marketing automation increased our conversions by 32%. The personalized campaigns and segmentation strategies are top-notch.',
     avatar: 'RP',
   },
 ];
@@ -289,20 +173,88 @@ export type FAQ = {
   id: string;
   question: string;
   answer: string;
-  category: 'Courses' | 'Certification' | 'Consulting' | 'General';
+  category: 'SEO' | 'Social Media' | 'Content Marketing' | 'PPC' | 'Analytics' | 'General';
 };
 
 export const faqs: FAQ[] = [
-  { id: 'f1', question: 'Do you offer online or in-person training?', answer: 'Both. Our certification and agile courses run live online with an instructor, and we deliver corporate workshops on-site at your office or a venue of your choice.', category: 'Courses' },
-  { id: 'f2', question: 'What is the typical pass rate for your PMP bootcamp?', answer: 'Our PMP bootcamp maintains a 96% first-attempt pass rate. This reflects our structured curriculum, extensive mock-exam bank, and dedicated mentor support throughout the program.', category: 'Certification' },
-  { id: 'f3', question: 'Can you customize training for our industry?', answer: 'Absolutely. We tailor case studies, exercises, and examples to your industry — whether healthcare, finance, construction, or technology. Customized corporate programs are our specialty.', category: 'Courses' },
-  { id: 'f4', question: 'How long does a typical consulting engagement last?', answer: 'Engagements range from focused 4-week health checks to multi-year PMO partnerships. Most rescue and setup engagements run 8-16 weeks; transformations typically span 6-12 months.', category: 'Consulting' },
-  { id: 'f5', question: 'Are your instructors certified?', answer: 'Every instructor holds the relevant global credentials (PMP, PMI-ACP, CSM, PRINCE2, SAFe) and brings 15+ years of hands-on delivery experience. We never use theoretical trainers.', category: 'Courses' },
-  { id: 'f6', question: 'Do you provide post-training support?', answer: 'Yes. Certification students get 90 days of mentor access and mock-exam practice. Corporate clients receive post-engagement enablement sessions to sustain the changes we introduced.', category: 'Courses' },
-  { id: 'f7', question: 'What payment methods do you accept?', answer: 'We accept all major credit cards, bank transfers, and corporate purchase orders. Course fees can also be paid in three monthly installments at no extra charge.', category: 'General' },
-  { id: 'f8', question: 'Can you help with our PMP application?', answer: 'Yes. Our certification advisors guide you through the experience documentation, eligibility verification, and application submission as part of the bootcamp package.', category: 'Certification' },
-  { id: 'f9', question: 'Do you work with startups or only enterprises?', answer: 'We work across the spectrum. Our lighter consulting packages and foundational courses are designed for startups and small teams, while our PMO and transformation practices serve enterprises.', category: 'Consulting' },
-  { id: 'f10', question: 'Are course materials included in the price?', answer: 'Yes — all course materials, practice exams, templates, and reference guides are included. There are no hidden fees; exam fees paid to the certifying body are separate.', category: 'General' },
+  {
+    id: 'f1',
+    question: 'What is SEO and why do I need it?',
+    answer: 'SEO (Search Engine Optimization) helps your website rank higher in search results, making it easier for potential customers to find you. It drives organic traffic, builds credibility, and delivers long-term results without ongoing ad spend.',
+    category: 'SEO',
+  },
+  {
+    id: 'f2',
+    question: 'How long does it take to see SEO results?',
+    answer: 'SEO is a long-term strategy. Typically, you can start seeing initial improvements in 3-6 months, with significant results in 6-12 months. The timeline depends on your industry, competition, and current website health.',
+    category: 'SEO',
+  },
+  {
+    id: 'f3',
+    question: 'Which social media platforms should my business be on?',
+    answer: 'The best platforms depend on your target audience and business goals. LinkedIn is ideal for B2B, Instagram and TikTok for visual brands, Facebook for community building, and Twitter/X for real-time engagement. We help you choose and optimize the right platforms.',
+    category: 'Social Media',
+  },
+  {
+    id: 'f4',
+    question: 'How do you measure social media success?',
+    answer: 'We track metrics that matter: engagement rate, follower growth, reach, impressions, click-through rates, and conversions. We provide regular reports with actionable insights to continuously improve performance.',
+    category: 'Social Media',
+  },
+  {
+    id: 'f5',
+    question: 'What is content marketing and why is it important?',
+    answer: 'Content marketing is the creation and distribution of valuable content to attract and engage your target audience. It builds trust, establishes authority, and drives organic traffic. Good content converts visitors into customers.',
+    category: 'Content Marketing',
+  },
+  {
+    id: 'f6',
+    question: 'How often should I publish content?',
+    answer: 'Consistency matters more than frequency. We typically recommend 4-8 blog posts per month, 2-3 social media posts per week, and 1-2 email newsletters monthly. We tailor a content calendar that works for your resources and goals.',
+    category: 'Content Marketing',
+  },
+  {
+    id: 'f7',
+    question: 'What is PPC advertising and how does it work?',
+    answer: 'PPC (Pay-Per-Click) is a paid advertising model where you pay only when someone clicks on your ad. Platforms like Google Ads and Meta Ads let you target specific audiences, control your budget, and track every dollar spent for maximum ROI.',
+    category: 'PPC',
+  },
+  {
+    id: 'f8',
+    question: 'What is a good ROAS for PPC campaigns?',
+    answer: 'A good ROAS (Return on Ad Spend) varies by industry, but generally a 3:1 to 5:1 ratio is considered healthy. That means earning $3-$5 for every $1 spent on ads. We optimize campaigns to achieve the highest possible ROAS for your business.',
+    category: 'PPC',
+  },
+  {
+    id: 'f9',
+    question: 'What marketing metrics should I track?',
+    answer: 'Key metrics include website traffic, conversion rate, cost per acquisition, ROI, engagement rate, and customer lifetime value. We help you identify and track the metrics that actually matter to your business goals.',
+    category: 'Analytics',
+  },
+  {
+    id: 'f10',
+    question: 'How do I know if my marketing is working?',
+    answer: 'Through comprehensive analytics and reporting. We track all marketing channels, measure performance against KPIs, and provide regular reports. If something isn\'t working, we identify it quickly and optimize for better results.',
+    category: 'Analytics',
+  },
+  {
+    id: 'f11',
+    question: 'Do you offer custom marketing packages?',
+    answer: 'Yes! Every business is unique, and we create custom packages tailored to your specific goals, budget, and industry. Contact us for a free consultation to discuss your needs.',
+    category: 'General',
+  },
+  {
+    id: 'f12',
+    question: 'How much do your digital marketing services cost?',
+    answer: 'Our pricing is customized based on your specific needs and goals. We offer flexible packages for businesses of all sizes. Contact us for a free consultation and we\'ll provide a tailored quote.',
+    category: 'General',
+  },
+  {
+    id: 'f13',
+    question: 'Do you offer ongoing support and optimization?',
+    answer: 'Absolutely. Marketing isn\'t a one-time effort. We provide ongoing management, regular reporting, and continuous optimization to ensure your campaigns keep delivering results over time.',
+    category: 'General',
+  },
 ];
 
 export type Job = {
@@ -316,19 +268,19 @@ export type Job = {
 };
 
 export const jobs: Job[] = [
-  { id: 'j1', title: 'Senior PM Consultant', department: 'Consulting', location: 'Bengaluru / Remote', type: 'Full-time', level: 'Senior', blurb: 'Lead client engagements, conduct health checks, and coach client teams to delivery maturity.' },
-  { id: 'j2', title: 'Agile Coach', department: 'Transformation', location: 'Mumbai / Remote', type: 'Full-time', level: 'Mid-Senior', blurb: 'Guide organizations through agile transformations with hands-on team coaching and framework expertise.' },
-  { id: 'j3', title: 'Certification Instructor', department: 'Education', location: 'Remote', type: 'Contract', level: 'Senior', blurb: 'Deliver live-online PMP, PMI-ACP, and Scrum courses with energy, rigor, and real-world stories.' },
-  { id: 'j4', title: 'Instructional Designer', department: 'Education', location: 'Bengaluru', type: 'Full-time', level: 'Mid', blurb: 'Design blended learning experiences across our certification and corporate training portfolio.' },
-  { id: 'j5', title: 'PMO Analyst', department: 'Consulting', location: 'Hyderabad', type: 'Full-time', level: 'Junior', blurb: 'Support PMO setup engagements — build templates, dashboards, and governance artifacts for clients.' },
-  { id: 'j6', title: 'Account Manager', department: 'Growth', location: 'Bengaluru / Remote', type: 'Full-time', level: 'Mid-Senior', blurb: 'Own client relationships across consulting and training, identifying expansion and renewal opportunities.' },
+  { id: 'j1', title: 'SEO Specialist', department: 'SEO', location: 'Bengaluru / Remote', type: 'Full-time', level: 'Mid', blurb: 'Manage SEO campaigns, conduct keyword research, and optimize client websites for organic growth.' },
+  { id: 'j2', title: 'Social Media Manager', department: 'Social Media', location: 'Mumbai / Remote', type: 'Full-time', level: 'Mid-Senior', blurb: 'Lead social media strategy, content creation, and community engagement across all platforms.' },
+  { id: 'j3', title: 'Content Marketing Strategist', department: 'Content', location: 'Remote', type: 'Full-time', level: 'Senior', blurb: 'Develop content strategies, manage editorial calendars, and create high-performing content.' },
+  { id: 'j4', title: 'PPC Campaign Manager', department: 'PPC', location: 'Bengaluru', type: 'Full-time', level: 'Mid', blurb: 'Manage Google Ads and Meta Ads campaigns, optimize performance, and drive ROI.' },
+  { id: 'j5', title: 'Marketing Analyst', department: 'Analytics', location: 'Hyderabad', type: 'Full-time', level: 'Junior', blurb: 'Track, measure, and report on marketing performance across all channels.' },
+  { id: 'j6', title: 'Account Manager', department: 'Growth', location: 'Bengaluru / Remote', type: 'Full-time', level: 'Mid-Senior', blurb: 'Own client relationships, identify growth opportunities, and ensure campaign success.' },
 ];
 
 export type PortfolioItem = {
   id: string;
   title: string;
   client: string;
-  category: 'Consulting' | 'Training' | 'Transformation' | 'PMO';
+  category: 'SEO' | 'Social Media' | 'Content Marketing' | 'PPC' | 'Analytics';
   duration: string;
   result: string;
   summary: string;
@@ -337,72 +289,97 @@ export type PortfolioItem = {
 };
 
 export const portfolioItems: PortfolioItem[] = [
-  { id: 'p1', title: 'Enterprise PMO Build-out', client: 'Global Fintech', category: 'PMO', duration: '9 months', result: '60% faster delivery reporting', summary: 'Designed and launched a centralized PMO serving 14 product teams, standardizing methodology and portfolio reporting across the organization.', metric: '60%', metricLabel: 'faster reporting' },
-  { id: 'p2', title: 'Agile Transformation at Scale', client: 'Healthcare Network', category: 'Transformation', duration: '12 months', result: '3x throughput in 6 months', summary: 'Guided a 400-person delivery organization from waterfall to SAFe, coaching leadership and teams through the transition.', metric: '3x', metricLabel: 'throughput' },
-  { id: 'p3', title: 'Flagship Project Rescue', client: 'Manufacturing Group', category: 'Consulting', duration: '10 weeks', result: 'Recovered 9-month delay', summary: 'Diagnosed root causes on a delayed ERP rollout, re-planned the critical path, and re-established governance to deliver within a revised realistic timeline.', metric: '9 mo', metricLabel: 'delay recovered' },
-  { id: 'p4', title: 'PMP Enablement Program', client: 'Telecom Operator', category: 'Training', duration: '6 months', result: '120 PMs certified', summary: 'Ran a cohort-based PMP program for 150 project managers with a 96% pass rate, including application assistance and mentor support.', metric: '120', metricLabel: 'PMs certified' },
-  { id: 'p5', title: 'Portfolio Prioritization Overhaul', client: 'SaaS Scale-up', category: 'Consulting', duration: '4 months', result: '40% less wasted effort', summary: 'Built a value-based prioritization framework and investment committee process that redirected spend toward highest-value initiatives.', metric: '40%', metricLabel: 'less wasted effort' },
-  { id: 'p6', title: 'ScrumMaster Rollout', client: 'Retail Bank', category: 'Training', duration: '3 months', result: '45 CSMs in one quarter', summary: 'Delivered hands-on ScrumMaster certification across 8 squads, paired with team-level coaching to embed new practices.', metric: '45', metricLabel: 'CSMs certified' },
-];
-
-export type PricingPlan = {
-  id: string;
-  name: string;
-  price: number;
-  period: string;
-  tagline: string;
-  features: string[];
-  highlighted?: boolean;
-  cta: string;
-};
-
-export const pricingPlans: PricingPlan[] = [
   {
-    id: 'starter',
-    name: 'Self-Starter',
-    price: 349,
-    period: 'per course',
-    tagline: 'For individual professionals beginning their PM journey.',
-    features: ['Foundational courses access', 'Downloadable templates', 'Community forum access', 'Completion certificate', 'Email support'],
-    cta: 'Enroll Now',
+    id: 'p1',
+    title: 'SEO Growth Strategy',
+    client: 'TechSaaS Startup',
+    category: 'SEO',
+    duration: '6 months',
+    result: '280% organic traffic increase',
+    summary: 'Comprehensive SEO strategy including keyword research, on-page optimization, and technical SEO improvements for a B2B SaaS company.',
+    metric: '280%',
+    metricLabel: 'traffic growth',
   },
   {
-    id: 'professional',
-    name: 'Professional',
-    price: 99,
-    period: 'per month',
-    tagline: 'For PMs pursuing certification and career growth.',
-    features: ['All certification prep courses', 'Unlimited mock exams', 'Mentor support (90 days)', 'Full template library', 'Study group access', 'Priority support'],
-    highlighted: true,
-    cta: 'Start Professional',
+    id: 'p2',
+    title: 'Social Media Brand Building',
+    client: 'Fashion Retailer',
+    category: 'Social Media',
+    duration: '4 months',
+    result: '450K+ new followers',
+    summary: 'Instagram and TikTok strategy with influencer partnerships, user-generated content, and community engagement campaigns.',
+    metric: '450K',
+    metricLabel: 'new followers',
   },
   {
-    id: 'enterprise',
-    name: 'Enterprise',
-    price: 0,
-    period: 'custom',
-    tagline: 'For organizations scaling delivery capability.',
-    features: ['Custom corporate training', 'Dedicated success manager', 'Consulting add-ons available', 'LMS integration', 'Cohort analytics dashboard', 'SLA-backed support'],
-    cta: 'Talk to Sales',
+    id: 'p3',
+    title: 'Content Marketing Engine',
+    client: 'B2B Software Company',
+    category: 'Content Marketing',
+    duration: '8 months',
+    result: '180K monthly readers',
+    summary: 'Built a content marketing engine with blog posts, whitepapers, case studies, and video content that established thought leadership.',
+    metric: '180K',
+    metricLabel: 'monthly readers',
+  },
+  {
+    id: 'p4',
+    title: 'PPC Campaign Optimization',
+    client: 'E-commerce Brand',
+    category: 'PPC',
+    duration: '3 months',
+    result: '4.8x ROAS achieved',
+    summary: 'Google Ads and Meta Ads optimization with audience targeting, A/B testing, and conversion rate optimization for an online store.',
+    metric: '4.8x',
+    metricLabel: 'ROAS',
+  },
+  {
+    id: 'p5',
+    title: 'Marketing Analytics Dashboard',
+    client: 'Healthcare Platform',
+    category: 'Analytics',
+    duration: '5 months',
+    result: '40% better decision-making',
+    summary: 'Custom analytics dashboard integrating data from all marketing channels to provide real-time insights and ROI measurement.',
+    metric: '40%',
+    metricLabel: 'better decisions',
+  },
+  {
+    id: 'p6',
+    title: 'Email Marketing Automation',
+    client: 'EdTech Company',
+    category: 'Content Marketing',
+    duration: '3 months',
+    result: '32% increase in conversions',
+    summary: 'Email marketing automation with personalized drip campaigns, segmentation, and A/B testing to nurture leads and drive conversions.',
+    metric: '32%',
+    metricLabel: 'conversion increase',
   },
 ];
 
 export const stats = [
-  { value: '15+', label: 'Years of practice' },
-  { value: '40K+', label: 'Professionals trained' },
-  { value: '96%', label: 'Certification pass rate' },
-  { value: '120+', label: 'Organizations served' },
+  { value: '15+', label: 'Years of experience' },
+  { value: '500+', label: 'Campaigns delivered' },
+  { value: '98%', label: 'Client satisfaction rate' },
+  { value: '120+', label: 'Businesses served' },
 ];
 
 export const achievements = [
-  { value: 'PMI Authorized', label: 'Training Partner' },
-  { value: '4.9/5', label: 'Average course rating' },
+  { value: 'Google Partner', label: 'Certified Agency' },
+  { value: '4.9/5', label: 'Average client rating' },
   { value: '20+', label: 'Industries served' },
   { value: '8', label: 'Countries reached' },
 ];
 
 export const team = [
-
+  {
+    id: 't1',
+    name: 'Amit Kumar',
+    role: 'Founder & CEO',
+    avatar: 'AK',
+    bio: '15+ years in digital marketing with expertise in SEO, content strategy, and business growth. Previously led marketing at multiple startups.',
+    icon: 'Compass',
+  },
 ];
 
 export const trustedLogos = ['Nexora', 'Meridian', 'Vertex Health', 'Lumen', 'Orbit Telecom', 'Cloudpeak', 'FinServe', 'Helix'];

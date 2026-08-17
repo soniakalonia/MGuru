@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, Star, Quote, ChevronLeft, ChevronRight, GraduationCap, Compass,
-  Building2, Award, Users, ShieldCheck, Target, Briefcase, Sparkles,
+  ArrowRight, Star, Quote, ChevronLeft, ChevronRight, Compass,
+  Users, ShieldCheck, Target, Briefcase, Sparkles,
+  BarChart3, Megaphone, PenTool, Mail,
 } from 'lucide-react';
 import Hero from '@/components/Hero';
 import Reveal from '@/components/Reveal';
@@ -10,14 +11,14 @@ import SectionHeading from '@/components/SectionHeading';
 import CountUp from '@/components/CountUp';
 import Icon from '@/components/Icon';
 import {
-  stats, services, courses, testimonials, trustedLogos,
+  stats, services, testimonials, trustedLogos,
 } from '@/data/content';
 
 const heroServices = [
-  { icon: Compass, label: 'Consulting' },
-  { icon: GraduationCap, label: 'Training' },
-  { icon: Award, label: 'Certification' },
-  { icon: Building2, label: 'PMO Setup' },
+  { icon: Compass, label: 'SEO' },
+  { icon: Users, label: 'Social Media' },
+  { icon: PenTool, label: 'Content' },
+  { icon: BarChart3, label: 'Analytics' },
 ];
 
 export default function Home() {
@@ -38,7 +39,7 @@ export default function Home() {
       <section className="border-y border-slatey-200 bg-slatey-50">
         <div className="container-x py-10">
           <p className="text-center text-xs font-semibold uppercase tracking-widest text-slatey-500">
-            Trusted by teams at leading organizations
+            Trusted by businesses across industries
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {trustedLogos.map((logo) => (
@@ -74,8 +75,8 @@ export default function Home() {
         <div className="container-x">
           <SectionHeading
             eyebrow="What we do"
-            title="Services built for delivery outcomes"
-            subtitle="Whether you need a consultant to rescue a project or a training program to certify your team, we meet you where you are."
+            title="Digital marketing services built for growth"
+            subtitle="From SEO to social media, content marketing to analytics — we help you build a powerful online presence and drive measurable results."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.slice(0, 6).map((service, i) => (
@@ -105,18 +106,19 @@ export default function Home() {
           <Reveal>
             <span className="badge bg-brand-700/50 text-brand-100"><Sparkles className="h-3.5 w-3.5" /> Our approach</span>
             <h2 className="mt-4 font-display text-3xl font-bold text-white md:text-4xl">
-              Pragmatic, not dogmatic
+              Data-driven, results-focused
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-brand-100">
-              We blend the discipline of traditional methods with the adaptability of agile.
-              No rigid frameworks — just the right practices for your context, your team, and your goals.
+              We combine creative strategy with data-driven execution. No guesswork — 
+              just proven digital marketing techniques tailored to your business goals, 
+              audience, and industry.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
-                { icon: Target, t: 'Outcome-focused', d: 'We measure success by what you ship, not hours billed.' },
-                { icon: Users, t: 'People-first', d: 'Lasting change comes from enabled teams, not dependency.' },
-                { icon: ShieldCheck, t: 'Evidence-based', d: 'Recommendations grounded in data and proven practice.' },
-                { icon: Briefcase, t: 'Industry-aware', d: 'Tailored to your sector, regulation, and culture.' },
+                { icon: Target, t: 'Goal-oriented', d: 'Every campaign tied to your business objectives.' },
+                { icon: Users, t: 'Audience-first', d: 'We build strategies around your ideal customers.' },
+                { icon: ShieldCheck, t: 'Data-backed', d: 'Decisions grounded in analytics and performance data.' },
+                { icon: BarChart3, t: 'Results-driven', d: 'Continuous optimization for maximum ROI.' },
               ].map((item) => (
                 <div key={item.t} className="rounded-xl bg-brand-700/40 p-4">
                   <item.icon className="h-5 w-5 text-brand-300" />
@@ -141,53 +143,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest courses */}
-      <section className="bg-white section-pad">
-        <div className="container-x">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <SectionHeading
-              center={false}
-              eyebrow="Learn with us"
-              title="Popular courses"
-              subtitle="Globally recognized certifications and practical skills, taught by instructors who've delivered in the real world."
-            />
-            <Link to="/courses" className="btn-secondary shrink-0">
-              View all courses <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {courses.slice(0, 4).map((course, i) => (
-              <Reveal key={course.id} delay={i * 80}>
-                <Link to="/courses" className="card group flex h-full flex-col p-6">
-                  <div className="flex items-center justify-between">
-                    <span className="badge">{course.category}</span>
-                    <span className="flex items-center gap-1 text-xs font-medium text-amber-500">
-                      <Star className="h-3.5 w-3.5 fill-amber-400" /> {course.rating}
-                    </span>
-                  </div>
-                  <span className="mt-5 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                    <Icon name={course.icon} className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-4 font-display text-base font-semibold text-slatey-900">{course.title}</h3>
-                  <p className="mt-2 flex-1 text-sm text-slatey-600">{course.blurb}</p>
-                  <div className="mt-5 flex items-center justify-between border-t border-slatey-100 pt-4 text-xs text-slatey-500">
-                    <span>{course.duration} &middot; {course.level}</span>
-                    <span className="font-display text-lg font-bold text-brand-700">${course.price}</span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonial carousel */}
       <section className="relative overflow-hidden bg-slatey-50 section-pad">
         <div className="container-x">
           <SectionHeading
             eyebrow="Client stories"
             title="What our clients say"
-            subtitle="Organizations and professionals who partnered with MGuru to level up their delivery."
+            subtitle="Businesses that partnered with MGuru to grow their digital presence."
           />
           <div className="mx-auto mt-14 max-w-4xl">
             <Reveal>
@@ -252,18 +214,18 @@ export default function Home() {
         <div className="container-x relative py-20 text-center md:py-28">
           <Reveal>
             <h2 className="font-display text-3xl font-bold text-white md:text-4xl">
-              Ready to deliver with confidence?
+              Ready to grow your digital presence?
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-brand-100">
-              Book a free 30-minute consultation. We'll diagnose your delivery challenges
-              and recommend the right next step — no obligation.
+              Book a free 30-minute consultation. We'll analyze your current digital strategy
+              and recommend the right next steps — no obligation.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Link to="/contact" className="btn-primary bg-white text-brand-700 hover:bg-brand-50 hover:text-brand-800">
                 Book a consultation <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/courses" className="btn-secondary border-white text-white hover:bg-white hover:text-brand-700">
-                Browse courses
+              <Link to="/services" className="btn-secondary border-white text-white hover:bg-white hover:text-brand-700">
+                Explore services
               </Link>
             </div>
           </Reveal>

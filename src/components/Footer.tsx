@@ -12,6 +12,7 @@ export default function Footer() {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
+
     if (email.trim()) {
       setSubscribed(true);
       setEmail('');
@@ -23,7 +24,7 @@ export default function Footer() {
     <footer className="bg-slatey-900 text-slatey-300">
       <div className="container-x py-16">
         <div className="grid gap-12 lg:grid-cols-12">
-          {/* Brand + newsletter */}
+          {/* Brand */}
           <div className="lg:col-span-4">
             <Link to="/" className="flex items-center gap-2.5">
               <img src={logo} alt="MGuru logo" className="h-10 w-10 rounded-xl object-cover" />
@@ -35,59 +36,33 @@ export default function Footer() {
               Project management Infotech and education that helps professionals and
               organizations deliver successful projects with confidence. Founded in 2024.
             </p>
-            <div className="mt-6">
-              <h4 className="text-sm font-semibold text-white">Newsletter</h4>
-              <p className="mt-1 text-xs text-slatey-400">
-                Monthly insights on delivery, agile, and PM careers.
-              </p>
-              <form onSubmit={handleSubscribe} className="mt-3 flex gap-2">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
-                  className="w-full rounded-xl border border-slatey-700 bg-slatey-800 px-4 py-2.5 text-sm text-white placeholder-slatey-500 focus:border-brand-500 focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="flex shrink-0 items-center justify-center rounded-xl bg-brand-600 px-4 text-white transition-colors hover:bg-brand-500"
-                  aria-label="Subscribe"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-              {subscribed && (
-                <p className="mt-2 flex items-center gap-1.5 text-xs text-emerald-400">
-                  <CheckCircle2 className="h-3.5 w-3.5" /> You're subscribed. Thanks!
-                </p>
-              )}
-            </div>
           </div>
 
-          {/* Quick links */}
+          {/* Quick links - Company */}
           <div className="lg:col-span-2">
             <h4 className="text-sm font-semibold text-white">Company</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              {navLinks.slice(0, 6).map((l) => (
-                <li key={l.to}>
-                  <Link to={l.to} className="text-slatey-400 transition-colors hover:text-brand-400">
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks
+                .filter((l) => l.label !== 'Courses' && l.label !== 'Pricing')
+                .slice(0, 5)
+                .map((l) => (
+                  <li key={l.to}>
+                    <Link to={l.to} className="text-slatey-400 transition-colors hover:text-brand-400">
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </div>
 
+          {/* Resources */}
           <div className="lg:col-span-2">
             <h4 className="text-sm font-semibold text-white">Resources</h4>
             <ul className="mt-4 space-y-2.5 text-sm">
               {[
-              
                 { label: 'FAQ', to: '/faq' },
                 { label: 'Testimonials', to: '/testimonials' },
                 { label: 'Careers', to: '/careers' },
-                { label: 'Pricing', to: '/pricing' },
                 { label: 'Contact', to: '/contact' },
               ].map((l) => (
                 <li key={l.to}>
@@ -127,11 +102,12 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slatey-800 pt-8 text-sm text-slatey-500 md:flex-row">
-          <p>&copy; {2024} MGuru Infotech Pvt. Ltd. All rights reserved.</p>
+          <p>&copy; 2024 MGuru Infotech Pvt. Ltd. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-brand-400">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-400">Terms of Service</a>
+            <Link to="/privacy-policy" className="hover:text-brand-400">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-brand-400">Terms of Service</Link>
           </div>
+
         </div>
       </div>
     </footer>

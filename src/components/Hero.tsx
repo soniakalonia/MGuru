@@ -16,39 +16,39 @@ export default function Hero() {
         <div className="animate-fade-in-up">
           <span className="badge mb-5">
             <Sparkles className="h-3.5 w-3.5" />
-            Trusted by 120+ organizations
+            Trusted by 120+ businesses
           </span>
 
           <h1 className="font-display text-4xl font-bold leading-tight text-slatey-900 md:text-5xl lg:text-6xl">
-            Deliver projects with{' '}
+            Grow your business with{' '}
             <span className="gradient-text">
-              clarity & confidence
+              digital marketing
             </span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-slatey-600">
-            MGuru is your partner for project management Infotech and
-            training. From certification prep to enterprise PMO
-            transformation, we help teams ship the work that matters.
+            MGuru is your partner for digital marketing success. 
+            From SEO and social media to content marketing and analytics, 
+            we help businesses build a powerful online presence and drive measurable growth.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <Link to="/courses" className="btn-primary">
-              Explore Courses
+            <Link to="/services" className="btn-primary">
+              Explore Services
               <ArrowRight className="h-4 w-4" />
             </Link>
 
-            <Link to="/services" className="btn-secondary">
+            <Link to="/contact" className="btn-secondary">
               <Play className="h-4 w-4" />
-              Our Services
+              Book a Consultation
             </Link>
           </div>
 
           <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slatey-600">
             {[
-              'PMI Authorized Partner',
-              '96% Pass Rate',
-              '15+ Years Experience',
+              'SEO Experts',
+              'Data-Driven Results',
+              'Proven ROI',
             ].map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-brand-600" />
@@ -68,13 +68,12 @@ export default function Hero() {
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
                 <CheckCircle2 className="h-5 w-5" />
               </span>
-
               <div>
                 <p className="text-sm font-semibold text-slatey-900">
-                  PMP Certified
+                  Results Driven
                 </p>
                 <p className="text-xs text-slatey-500">
-                  8,420 professionals
+                  Track every campaign
                 </p>
               </div>
             </div>

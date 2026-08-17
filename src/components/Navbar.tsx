@@ -6,18 +6,19 @@ import { navLinks } from '@/data/content';
 
 const dropdowns: Record<string, { label: string; to: string; desc: string }[]> = {
   Services: [
-    { label: 'PM Consulting', to: '/services#consulting', desc: 'Expert delivery guidance' },
-    { label: 'Corporate Training', to: '/services#training', desc: 'Upskill your teams' },
-    { label: 'Certification Prep', to: '/services#certification', desc: 'Global credentials' },
-    { label: 'PMO Setup', to: '/services#pmostartup', desc: 'Stand up a PMO' },
-  ],
-  Courses: [
-    { label: 'All Courses', to: '/courses', desc: 'Browse the full catalog' },
-    { label: 'Certification', to: '/courses?category=Certification', desc: 'PMP, CAPM, PRINCE2' },
-    { label: 'Agile', to: '/courses?category=Agile', desc: 'Scrum, Kanban, PMI-ACP' },
-    { label: 'Leadership', to: '/courses?category=Leadership', desc: 'Lead people & outcomes' },
+    { label: 'Search Engine Optimization (SEO)', to: '/services#seo', desc: 'Boost your visibility' },
+    { label: 'Social Media Marketing', to: '/services#social-media', desc: 'Engage your audience' },
+    { label: 'Content Marketing', to: '/services#content-marketing', desc: 'Tell your story' },
+    { label: 'Email Marketing', to: '/services#email-marketing', desc: 'Nurture your leads' },
+    { label: 'Advertising (PPC)', to: '/services#ppc', desc: 'Drive targeted traffic' },
+    { label: 'Analytics', to: '/services#analytics', desc: 'Data-driven decisions' },
+    { label: 'Campaign Planning', to: '/services#campaign-planning', desc: 'Strategic campaigns' },
   ],
 };
+
+const filteredNavLinks = navLinks.filter(
+  (link) => link.label !== 'Pricing' && link.label !== 'Courses'
+);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,9 +58,9 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav - using filteredNavLinks */}
         <ul className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => {
+          {filteredNavLinks.map((link) => {
             const hasDropdown = dropdowns[link.label];
             return (
               <li
@@ -117,12 +118,12 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - using filteredNavLinks */}
       {mobileOpen && (
         <div className="lg:hidden">
           <div className="container-x max-h-[calc(100vh-4rem)] overflow-y-auto pb-8">
             <ul className="flex flex-col gap-1 pt-2">
-              {navLinks.map((link) => {
+              {filteredNavLinks.map((link) => {
                 const hasDropdown = dropdowns[link.label];
                 return (
                   <li key={link.to}>

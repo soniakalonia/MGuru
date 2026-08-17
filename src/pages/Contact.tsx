@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Mail, Clock, Send, CheckCircle2, Linkedin, Twitter, Youtube, Facebook } from 'lucide-react';
+import { MapPin, Mail, Clock, Send, CheckCircle2, Linkedin } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
@@ -143,21 +143,15 @@ export default function Contact() {
             <div className="mt-6 rounded-2xl border border-slatey-200 bg-white p-6">
               <h3 className="font-display text-base font-semibold text-slatey-900">Follow us</h3>
               <div className="mt-4 flex gap-3">
-                {[
-                  { Icon: Linkedin, label: 'LinkedIn' },
-                  { Icon: Twitter, label: 'Twitter' },
-                  { Icon: Youtube, label: 'YouTube' },
-                  { Icon: Facebook, label: 'Facebook' },
-                ].map(({ Icon: I, label }) => (
-                  <a
-                    key={label}
-                    href="#"
-                    aria-label={label}
-                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-slatey-100 text-slatey-600 transition-all hover:bg-brand-600 hover:text-white"
-                  >
-                    <I className="h-4.5 w-4.5" />
-                  </a>
-                ))}
+                <a
+                  href="https://www.linkedin.com/company/mguru-in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-slatey-100 text-slatey-600 transition-all hover:bg-brand-600 hover:text-white"
+                >
+                  <Linkedin className="h-4.5 w-4.5" />
+                </a>
               </div>
             </div>
           </Reveal>

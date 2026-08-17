@@ -1,18 +1,19 @@
 import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, TrendingUp, Clock, Building2, X } from 'lucide-react';
+import { ArrowRight, TrendingUp, Clock, Building2, X, Users, BarChart3, Megaphone, PenTool } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import { portfolioItems, type PortfolioItem } from '@/data/content';
 
-const categories = ['All', 'Consulting', 'Training', 'Transformation', 'PMO'] as const;
+const categories = ['All', 'SEO', 'Social Media', 'Content Marketing', 'PPC', 'Analytics'] as const;
 
 const catColors: Record<string, string> = {
-  Consulting: 'from-brand-700 to-brand-500',
-  Training: 'from-emerald-700 to-emerald-500',
-  Transformation: 'from-amber-600 to-amber-400',
-  PMO: 'from-slatey-800 to-slatey-600',
+  SEO: 'from-blue-700 to-blue-500',
+  'Social Media': 'from-orange-600 to-orange-400',
+  'Content Marketing': 'from-emerald-700 to-emerald-500',
+  PPC: 'from-purple-700 to-purple-500',
+  Analytics: 'from-slatey-800 to-slatey-600',
 };
 
 export default function Portfolio() {
@@ -27,8 +28,8 @@ export default function Portfolio() {
     <>
       <PageHeader
         eyebrow="Portfolio"
-        title="Delivery outcomes we're proud of"
-        subtitle="A selection of engagements where we helped organizations rescue projects, build PMOs, transform delivery, and upskill their teams."
+        title="Digital marketing results we're proud of"
+        subtitle="A selection of campaigns and strategies where we helped businesses grow their online presence, drive traffic, and increase conversions."
         crumb="Portfolio"
       />
 
@@ -117,7 +118,7 @@ export default function Portfolio() {
                 </div>
                 <div>
                   <p className="font-display text-2xl font-bold text-brand-700">{selected.duration}</p>
-                  <p className="text-xs text-slatey-500">Engagement</p>
+                  <p className="text-xs text-slatey-500">Campaign</p>
                 </div>
                 <div>
                   <p className="font-display text-2xl font-bold text-brand-700">{selected.category}</p>
@@ -127,9 +128,9 @@ export default function Portfolio() {
               <h3 className="mt-6 font-display text-lg font-semibold text-slatey-900">The challenge</h3>
               <p className="mt-2 leading-relaxed text-slatey-600">{selected.summary}</p>
               <h3 className="mt-6 font-display text-lg font-semibold text-slatey-900">The outcome</h3>
-              <p className="mt-2 leading-relaxed text-slatey-600">{selected.result}. The engagement left the client with sustainable practices and an enabled team ready to deliver independently.</p>
+              <p className="mt-2 leading-relaxed text-slatey-600">{selected.result}. The campaign delivered measurable growth and built sustainable marketing practices for the client.</p>
               <Link to="/contact" className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-700 hover:gap-2.5 transition-all">
-                Discuss a similar engagement <ArrowRight className="h-4 w-4" />
+                Discuss a similar campaign <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </div>
@@ -142,7 +143,7 @@ export default function Portfolio() {
           <Reveal>
             <h2 className="section-title">Want results like these?</h2>
             <p className="mx-auto mt-4 max-w-xl section-subtitle">
-              Every engagement is different. Let's talk about your delivery goals and how we can help.
+              Every business is unique. Let's talk about your digital marketing goals and how we can help you grow.
             </p>
             <Link to="/contact" className="mt-8 btn-primary">
               Book a consultation <ArrowRight className="h-4 w-4" />

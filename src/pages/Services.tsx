@@ -1,25 +1,47 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Check, ArrowRight, ArrowUpRight } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
 import Icon from '@/components/Icon';
-import { services, pricingPlans } from '@/data/content';
+import { services } from '@/data/content';
 
 const process = [
-  { step: '01', title: 'Discover', desc: 'We diagnose your current delivery state — interviewing teams, reviewing artifacts, and identifying the highest-impact gaps.' },
-  { step: '02', title: 'Design', desc: 'We craft a tailored plan: methodology choices, training curriculum, governance model, and a realistic timeline.' },
-  { step: '03', title: 'Deliver', desc: 'Our consultants and trainers embed with your teams, building capability through real work, not just workshops.' },
-  { step: '04', title: 'Sustain', desc: 'We hand over with enablement sessions, documentation, and a maturity roadmap so the change sticks.' },
+  { step: '01', title: 'Discover', desc: 'We diagnose your current marketing state — analyzing your digital presence, reviewing campaigns, and identifying the highest-impact opportunities.' },
+  { step: '02', title: 'Design', desc: 'We craft a tailored strategy: channel selection, content calendar, budget allocation, and a realistic timeline for execution.' },
+  { step: '03', title: 'Deliver', desc: 'Our experts execute the campaigns, optimize in real-time, and ensure every dollar spent drives measurable results.' },
+  { step: '04', title: 'Sustain', desc: 'We hand over with detailed analytics, optimization recommendations, and a growth roadmap so the momentum continues.' },
 ];
 
 export default function Services() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle hash routing for service navigation
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        // Small delay to ensure DOM is fully rendered
+        setTimeout(() => {
+          const navbarHeight = 80; // Adjust based on your navbar height
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - navbarHeight,
+            behavior: 'smooth'
+          });
+        }, 300);
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <PageHeader
         eyebrow="Our services"
-        title="Infotech and training that builds delivery capability"
-        subtitle="From rescuing at-risk projects to certifying your workforce, we offer end-to-end project management services tailored to your organization."
+        title="Digital marketing solutions that drive results"
+        subtitle="From SEO to social media, content marketing to analytics, we offer comprehensive digital marketing services tailored to your business goals."
         crumb="Services"
         cta={
           <Link to="/contact" className="btn-primary">
@@ -86,61 +108,18 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Pricing preview */}
+      {/* CTA */}
       <section className="bg-white section-pad">
-        <div className="container-x">
-          <SectionHeading
-            eyebrow="Pricing"
-            title="Simple, transparent pricing"
-            subtitle="Whether you're an individual learner or an enterprise, there's a plan that fits. All plans can be customized."
-          />
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
-            {pricingPlans.map((plan, i) => (
-              <Reveal key={plan.id} delay={i * 100}>
-                <div
-                  className={`relative flex h-full flex-col rounded-2xl border p-8 ${
-                    plan.highlighted
-                      ? 'border-brand-600 bg-white shadow-card lg:-translate-y-3'
-                      : 'border-slatey-200 bg-white shadow-soft'
-                  }`}
-                >
-                  {plan.highlighted && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-4 py-1 text-xs font-semibold text-white">
-                      Most popular
-                    </span>
-                  )}
-                  <h3 className="font-display text-xl font-bold text-slatey-900">{plan.name}</h3>
-                  <p className="mt-2 text-sm text-slatey-600">{plan.tagline}</p>
-                  <div className="mt-5 flex items-baseline gap-1">
-                    {plan.price > 0 ? (
-                      <>
-                        <span className="font-display text-4xl font-bold text-slatey-900">${plan.price}</span>
-                        <span className="text-sm text-slatey-500">/{plan.period}</span>
-                      </>
-                    ) : (
-                      <span className="font-display text-3xl font-bold text-slatey-900">Custom</span>
-                    )}
-                  </div>
-                  <ul className="mt-6 flex-1 space-y-3">
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm text-slatey-700">
-                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" /> {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={plan.id === 'enterprise' ? '/contact' : '/courses'}
-                    className={`mt-8 w-full ${plan.highlighted ? 'btn-primary' : 'btn-secondary'}`}
-                  >
-                    {plan.cta}
-                  </Link>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-          <p className="mt-8 text-center text-sm text-slatey-500">
-            Need something tailored? <Link to="/contact" className="font-medium text-brand-700 hover:underline">Talk to our team</Link>.
-          </p>
+        <div className="container-x text-center">
+          <Reveal>
+            <h2 className="section-title">Ready to grow your digital presence?</h2>
+            <p className="mx-auto mt-4 max-w-xl section-subtitle">
+              Let's talk about your digital marketing goals and how we can help you achieve them.
+            </p>
+            <Link to="/contact" className="mt-8 btn-primary">
+              Book a consultation <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Reveal>
         </div>
       </section>
     </>

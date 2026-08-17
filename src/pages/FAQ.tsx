@@ -5,12 +5,12 @@ import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
 import { faqs } from '@/data/content';
 
-const categories = ['All', 'Courses', 'Certification', 'Consulting', 'General'] as const;
+const categories = ['All', 'SEO', 'Social Media', 'Content Marketing', 'PPC', 'Analytics', 'General'] as const;
 
 export default function FAQ() {
   const [category, setCategory] = useState<string>('All');
   const [query, setQuery] = useState('');
-  const [open, setOpen] = useState<string | null>(faqs[0].id);
+  const [open, setOpen] = useState<string | null>(faqs[0]?.id || null);
 
   const filtered = useMemo(() => {
     return faqs.filter((f) => {
@@ -26,7 +26,7 @@ export default function FAQ() {
       <PageHeader
         eyebrow="FAQ"
         title="Frequently asked questions"
-        subtitle="Everything you need to know about our courses, certifications, and consulting services. Can't find an answer? Reach out to us."
+        subtitle="Everything you need to know about our digital marketing services. Can't find an answer? Reach out to us."
         crumb="FAQ"
       />
 
