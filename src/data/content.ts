@@ -267,14 +267,7 @@ export type Job = {
   blurb: string;
 };
 
-export const jobs: Job[] = [
-  { id: 'j1', title: 'SEO Specialist', department: 'SEO', location: 'Bengaluru / Remote', type: 'Full-time', level: 'Mid', blurb: 'Manage SEO campaigns, conduct keyword research, and optimize client websites for organic growth.' },
-  { id: 'j2', title: 'Social Media Manager', department: 'Social Media', location: 'Mumbai / Remote', type: 'Full-time', level: 'Mid-Senior', blurb: 'Lead social media strategy, content creation, and community engagement across all platforms.' },
-  { id: 'j3', title: 'Content Marketing Strategist', department: 'Content', location: 'Remote', type: 'Full-time', level: 'Senior', blurb: 'Develop content strategies, manage editorial calendars, and create high-performing content.' },
-  { id: 'j4', title: 'PPC Campaign Manager', department: 'PPC', location: 'Bengaluru', type: 'Full-time', level: 'Mid', blurb: 'Manage Google Ads and Meta Ads campaigns, optimize performance, and drive ROI.' },
-  { id: 'j5', title: 'Marketing Analyst', department: 'Analytics', location: 'Hyderabad', type: 'Full-time', level: 'Junior', blurb: 'Track, measure, and report on marketing performance across all channels.' },
-  { id: 'j6', title: 'Account Manager', department: 'Growth', location: 'Bengaluru / Remote', type: 'Full-time', level: 'Mid-Senior', blurb: 'Own client relationships, identify growth opportunities, and ensure campaign success.' },
-];
+export const jobs: Job[] = [];
 
 export type PortfolioItem = {
   id: string;

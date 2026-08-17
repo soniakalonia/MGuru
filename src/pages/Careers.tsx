@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Briefcase, Clock, ArrowRight, Heart, Zap, Users, GraduationCap, Globe, CheckCircle2, X, Target, BarChart3 } from 'lucide-react';
+import { MapPin, Briefcase, Clock, ArrowRight, Heart, Zap, Users, GraduationCap, Globe, CheckCircle2, X, Target, BarChart3, Send } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
 import SectionHeading from '@/components/SectionHeading';
@@ -31,6 +31,7 @@ const benefsData = [
 
 export default function Careers() {
   const [selected, setSelected] = useState<Job | null>(null);
+  const hasOpenings = jobs.length > 0;
 
   return (
     <>
@@ -96,44 +97,71 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Job Openings */}
+      {/* Job Openings or No Openings */}
       <section className="bg-white section-pad">
         <div className="container-x">
-          <SectionHeading
-            eyebrow="Open positions"
-            title="Join our team"
-            subtitle="We're looking for talented individuals who are passionate about digital marketing and helping businesses grow."
-          />
-          <div className="mt-14 grid gap-6">
-            {jobs.map((job, i) => (
-              <Reveal key={job.id} delay={i * 80}>
-                <div className="card flex flex-col items-start gap-4 p-6 md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <h3 className="font-display text-lg font-semibold text-slatey-900">{job.title}</h3>
-                    <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-slatey-500">
-                      <span className="flex items-center gap-1">
-                        <Briefcase className="h-3.5 w-3.5" /> {job.department}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <MapPin className="h-3.5 w-3.5" /> {job.location}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock className="h-3.5 w-3.5" /> {job.type}
-                      </span>
-                      <span className="badge">{job.level}</span>
+          {hasOpenings ? (
+            <>
+              <SectionHeading
+                eyebrow="Open positions"
+                title="Join our team"
+                subtitle="We're looking for talented individuals who are passionate about digital marketing and helping businesses grow."
+              />
+              <div className="mt-14 grid gap-6">
+                {jobs.map((job, i) => (
+                  <Reveal key={job.id} delay={i * 80}>
+                    <div className="card flex flex-col items-start gap-4 p-6 md:flex-row md:items-center md:justify-between">
+                      <div className="flex-1">
+                        <h3 className="font-display text-lg font-semibold text-slatey-900">{job.title}</h3>
+                        <div className="mt-1 flex flex-wrap items-center gap-3 text-sm text-slatey-500">
+                          <span className="flex items-center gap-1">
+                            <Briefcase className="h-3.5 w-3.5" /> {job.department}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <MapPin className="h-3.5 w-3.5" /> {job.location}
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Clock className="h-3.5 w-3.5" /> {job.type}
+                          </span>
+                          <span className="badge">{job.level}</span>
+                        </div>
+                        <p className="mt-2 text-sm text-slatey-600">{job.blurb}</p>
+                      </div>
+                      <button
+                        onClick={() => setSelected(job)}
+                        className="btn-secondary shrink-0 text-sm"
+                      >
+                        View Details
+                      </button>
                     </div>
-                    <p className="mt-2 text-sm text-slatey-600">{job.blurb}</p>
+                  </Reveal>
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="mx-auto max-w-4xl">
+              <Reveal>
+                <div className="card p-12 text-center">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-slatey-100">
+                    <Briefcase className="h-8 w-8 text-slatey-400" />
                   </div>
-                  <button
-                    onClick={() => setSelected(job)}
-                    className="btn-secondary shrink-0 text-sm"
-                  >
-                    View Details
-                  </button>
+                  <h3 className="font-display text-xl font-semibold text-slatey-900">No current openings</h3>
+                  <p className="mt-2 text-sm text-slatey-600">
+                    We don't have any positions open right now, but we're always excited to meet great people.
+                  </p>
+                  <div className="mt-6 inline-flex items-center gap-3 rounded-xl bg-brand-50 px-6 py-3">
+                    <Send className="h-5 w-5 text-brand-600" />
+                    <p className="text-sm text-slatey-700">
+                      Send your resume to{' '}
+                      <a href="mailto:amit.kumar@mguru.in" className="font-medium text-brand-700 hover:underline">
+                        amit.kumar@mguru.in
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </Reveal>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </section>
 
@@ -175,12 +203,14 @@ export default function Careers() {
               </div>
               <h3 className="mt-6 font-display text-lg font-semibold text-slatey-900">About this role</h3>
               <p className="mt-2 leading-relaxed text-slatey-600">{selected.blurb}</p>
-              <p className="mt-4 text-sm text-slatey-600">
-                If this sounds like you, we'd love to hear from you. Send your resume to{' '}
-                <a href="mailto:amit.kumar@mguru.in" className="font-medium text-brand-700 hover:underline">
-                  amit.kumar@mguru.in
-                </a>
-              </p>
+              <div className="mt-6 rounded-xl bg-brand-50 p-4">
+                <p className="text-sm text-slatey-700">
+                  <span className="font-semibold">How to apply:</span> Send your resume to{' '}
+                  <a href="mailto:amit.kumar@mguru.in" className="font-medium text-brand-700 hover:underline">
+                    amit.kumar@mguru.in
+                  </a>
+                </p>
+              </div>
               <Link
                 to="/contact"
                 className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-700 hover:gap-2.5 transition-all"
